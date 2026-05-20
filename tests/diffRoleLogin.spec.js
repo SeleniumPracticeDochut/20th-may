@@ -2,7 +2,7 @@ import {expect, test} from '../myfixtures/login.js';
 
 test('Login as doctor', async ({loginAs, page,logout}) => {
     await loginAs('DOCTOR');
-    await expect(page).toHaveURL(/doctor/)
+    await expect.soft(page).toHaveURL(/doctor/)
     console.log(await page.url());
     await logout();
     
@@ -10,14 +10,14 @@ test('Login as doctor', async ({loginAs, page,logout}) => {
 
 test('Login as patient', async ({loginAs, page,logout}) => {
     await loginAs('PATIENT');
-    await expect(page).toHaveURL(/patient/)
+    await expect.soft(page).toHaveURL(/patient/)
     console.log(await page.url());
     await logout();
 });
 
 test('Login as nurse', async ({loginAs, page,logout}) => {
     await loginAs('NURSE');
-    await expect(page).toHaveURL(/nurse/)
+    await expect.soft(page).toHaveURL(/nurse/)
     console.log(await page.url());
     await logout();
 });
