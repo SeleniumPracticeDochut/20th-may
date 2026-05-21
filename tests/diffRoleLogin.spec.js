@@ -20,5 +20,4 @@ test('Login as nurse', async ({loginAs, page,logout}) => {
     await expect.soft(page).toHaveURL(/nurse/)
     console.log(await page.url());
     await logout();
-    console.log("Logged out successfully");
 });
